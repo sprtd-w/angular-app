@@ -4,8 +4,8 @@ import {PostFormComponent} from "./pages/home/components/post-form/post-form.com
 import {HomeComponent} from "./pages/home/home.component";
 import {AboutComponent} from "./pages/about/about.component";
 import {LoginComponent} from "./pages/login/login.component";
-import {AuthGuard} from "./core/services/auth.guard";
 import { AppResolverService } from './core/services/app-resolver.service';
+import { AuthGuard } from "./core/guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },  { path: 'about', component: AboutComponent },
   { path: 'post/new', component: PostFormComponent },
-  { path: 'post/edit/:id', component: PostFormComponent }
+  { path: 'post/edit/:id', component: PostFormComponent },
+  { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) }
 ];
 
 @NgModule({

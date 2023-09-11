@@ -18,7 +18,8 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
 import { AppStateService } from './core/services/app-state.service';
 import { AppResolverService } from './core/services/app-resolver.service';
 import { AlertComponent } from './shared/alert/alert.component';
-import { JwtInterceptor } from './core/services/jwt.interceptor';
+import { JwtInterceptor } from "./core/interceptors/jwt.interceptor";
+import { HttpService } from "./core/services/http.service";
 
 export function tokenGetter(): string | null {
   const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
@@ -36,7 +37,7 @@ export function tokenGetter(): string | null {
     AboutComponent,
     LoginComponent,
     NavigationComponent,
-    AlertComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -47,14 +48,18 @@ export function tokenGetter(): string | null {
     BrowserAnimationsModule,
     JwtModule.forRoot({
       config: {
-        tokenGetter: tokenGetter,
-      },
-    }),
+        tokenGetter: tokenGetter
+      }
+    })
   ],
   providers: [
+    HttpService,
     AppStateService,
     AppResolverService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
+  exports: [
+    AlertComponent
   ],
   bootstrap: [AppComponent]
 })

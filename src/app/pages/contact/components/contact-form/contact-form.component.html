@@ -1,0 +1,15 @@
+<form [formGroup]="contactForm" (ngSubmit)="submit()">
+  <div class="mb-3">
+    <app-contact-form-email formControlName="email"></app-contact-form-email>
+  </div>
+  <div class="mb-3">
+    <app-contact-form-message formControlName="message"></app-contact-form-message>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!!email?.errors">Send</button>
+  <div class="mt-3">
+    <ng-container *ngIf="!email.pristine && email.invalid || !message.pristine && message.invalid">
+      <p *ngIf="!email.pristine && email.errors && email.errors['emailError']">{{email.errors['emailError']}}</p>
+      <p *ngIf="!message.pristine && message.errors && message.errors['messageError']">{{message.errors['messageError']}}</p>
+    </ng-container>
+  </div>
+</form>
