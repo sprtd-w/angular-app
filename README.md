@@ -1,8 +1,3 @@
-# Interview requirements
-
-This repository contains the base code for recruitment exercise. Complete the tasks listed below and publish the solution on your github. Send us a link to your repository at least 1 day before the interview. 
-We will discuss the proposed solution during the interview. You should be ready to present the working application on your local machine.
-
 # MyApp
 
 MyApp is a simple Angular application that demonstrates basic concepts such as components, services, and routing. The app allows users to view, create, edit, and delete posts using a public REST API.
@@ -58,15 +53,11 @@ npm install
 
 ## Recruitment Task
 
-There are several defects introduced in the application with varying levels of difficulty. Your task is to find and fix these defects to ensure the app works as expected.
-
-- Make sure applications is working correctly 
+Application's expected behaviour: 
   - State of the application
   - Styling
   - Authentication
-  - REST operations handled correctly
-  - Navigation is working as expected
-  - Forms forms behave correctly
-- More own improvements are welcome 
-
-Good luck!
+  - REST operations
+  - Navigation
+  - Forms
+  - improvements 
