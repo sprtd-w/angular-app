@@ -14,6 +14,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginComponent } from './pages/login/login.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 import { AppStateService } from './core/services/app-state.service';
 import { AppResolverService } from './core/services/app-resolver.service';
 import { AlertComponent } from './shared/alert/alert.component';
@@ -34,6 +35,7 @@ export function tokenGetter(): string | null {
     HomeComponent,
     AboutComponent,
     LoginComponent,
+    NavigationComponent,
     AlertComponent,
   ],
   imports: [

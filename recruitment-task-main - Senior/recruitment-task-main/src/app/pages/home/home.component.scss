@@ -1,0 +1,15 @@
+:host, .home-container,  {
+  height: 100%;
+}
+
+.home-container {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+}
+
+
+.post-header {
+  display: flex;
+  align-items: center;
+  background: aliceblue;
+}
