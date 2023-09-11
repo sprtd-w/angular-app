@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h2>{{ mode }} Post</h2>
+  <form [formGroup]="postForm">
+    <div class="mb-3">
+      <label class="form-label">Title:</label>
+      <input type="text"
+
+             name="title"
+             formControlName="title"
+             class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Body:</label>
+      <textarea id="body"
+                name="body"
+                formControlName="body"
+                class="form-control">
+      </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ mode }} Post</button>
+    <button class="btn" (click)="closeAction()">Cancel</button>
+  </form>
+</div>
