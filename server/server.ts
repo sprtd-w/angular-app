@@ -1,5 +1,6 @@
 import * as express from "express";
 import { createPost, deleteItemById, getPostById, getPosts, savePostById } from './routePosts';
+import { Request, Response } from "express";
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -16,6 +17,9 @@ app.route("/api/posts/:id").get(getPostById);
 app.route("/api/posts").post(createPost);
 app.route("/api/posts/:id").put(savePostById);
 app.route("/api/posts/:id").delete(deleteItemById);
+app.route("/api/contacts").post(function(req: Request, res: Response) {
+  return res.status(200).json({});
+});
 
 
 
